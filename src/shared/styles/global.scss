@@ -1,0 +1,79 @@
+/* --- CSS RESET --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- BASE --- */
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* --- ROOT VARIABLES CONTROLLED BY THEME --- */
+:root {
+  --bg-main: #0b0f2a;
+  --bg-card: rgba(108, 56, 164, 0.18);
+  --bg-glass: rgba(255, 255, 255, 0.06);
+
+  --color-primary: #7f00ff;
+  --color-accent: #00c8ff;
+  --color-mint: #00ffc3;
+  --color-gold: #ffd700;
+  --color-error: #ff1744;
+
+  --text-main: #f2f2f2;
+  --text-muted: rgba(242, 242, 242, 0.7);
+
+  --glow-primary: 0 0 12px rgba(127, 0, 255, 0.65);
+  --glow-accent: 0 0 12px rgba(0, 200, 255, 0.65);
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f2a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7f00ff, #2d0b5b);
+  border-radius: 4px;
+}
+
+/* --- LINKS --- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- APP ROOT --- */
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- GLASS CARD --- */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- PREMIUM HOVER --- */
+.hover-glow {
+  transition: all 0.25s ease;
+}
+.hover-glow:hover {
+  box-shadow: var(--glow-primary);
+  transform: translateY(-2px);
+}
